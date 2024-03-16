@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGDAL MGLLE</title>
+    <link rel="shortcut icon" href="images/Group 952.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" integrity="sha512-heyoieAHmpAL3BdaQMsbIOhVvGb4+pl4aGCZqWzX/f1BChRArrBy/XUZDHW9WVi5p6pf92pX4yjkfmdaIYa2QQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            /* padding: 20px; */
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 9999999;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        </style>
+</head>
+<body>
+    <header class="header_section">
+        <div class="container">
+            <div class="header_section_items">
+                <div class="header_section_logo">
+                    <a href="index.html"><img class="logo" src="images/Group 952.png" alt="logo"></a>
+                </div>
+                <div class="header_section_menubar">
+                    <div class="menuberr">                    
+                        <ul id="menu" class="mobile_menu">
+                            <div class="search_icon_mobile">
+                                <form action="">
+                                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    <input type="search" class="search_button" placeholder="Søk">
+                                </form>
+                            </div>
+                            <li><a href="nettbutikk.html">Nettbutikk</a></li>
+                            <li><a href="oppskrifter.html">Oppskrifter</a></li>
+                            <li><a href="siste.html">Side nytt</a></li>
+                            <li><a href="urkron.html">Kornerter</a></li>
+                            <li><a href="om.html">Om oss</a></li>
+                            <li class="min_side"><a href="login.html"><i class="fa-solid fa-user"></i>  Min Side</a></li>
+                            <div class="imagee">
+                                <img src="images/Group 2444.png" alt="">
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="menuber_search_section">
+                        <div class="search-icon">
+                            <form action="">
+                                <input type="search"  id="searchButton" onclick="toggleSize()" name="" id="" class="menu_search_right" placeholder="Søk">
+                            </form>
+                        </div>
+                        <!-- ==================================== -->
+
+
+
+
+
+                        <!-- <a href="login.html"><i class="fa-solid fa-user"></i></a> -->
+                        <!-- <i class="fa-solid fa-user"></i> -->
+                        
+                        <!-- ============ -->
+                        <button onclick="openPopup()" id="user_login"><i class="fa-solid fa-user"></i></button>
+
+<div id="popup" class="popup">
+    <!-- <h2>This is a Popup</h2>
+    <p>Hello! This is some content inside the popup.</p> -->
+    <button onclick="closePopup()" id="buttonn"><i class="fa-solid fa-xmark"></i></button>
+    <section class="login_section" id="login_section">
+        <div class="login_section_main">
+            <h2>Logg inn</h2>
+            <div class="login_section_main_column">
+                <form action="">
+                    <label for="">E-post</label>
+                    <input type="email" placeholder="Oppgi din e-post">
+                    <label for="">Password</label>
+                    <input type="password" placeholder="Oppgi dit password">
+                    <button>Logg inn</button>
+                </form>
+                <a href="login_glemt_password.html">Glemt password?</a>
+                <a href="registration.html">Opprett Konto</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="overlay" class="overlay"></div>
+    
+
+
+                        <!-- ======================================= -->
+                    </div>
+                </div>
+                <div class="header_section_right_items">
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end -->
+    <!-- banner section start-->
+    <section class="banner_section">
+        <div class="container">
+            <div class="banner_section_main_column">
+                <div class="banner_section_texts">
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <h3>Lorem ipsum dolor sit amet, consectetuer</h3>
+                    <a href="#">Nettbutikk</a>
+                </div>
+                <div class="button-content">
+                    <div id="overlay" onclick="off()">
+                        <video controls>
+                            <source src="videos/Sigdal Mølle – dyrket lidenskap siden 2008!.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-button">
+                        <button onclick="on()"><i class="fa-solid fa-play"></i>Spill av film</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner section end -->
+    <!-- bestselgere section start -->
+    <section class="bestselgere_section">
+        <div class="container">
+            <div class="bestselgere_head">
+                <div>
+                    <h2>Bestselgere</h2>
+                </div>
+                <div class="underline">
+                    <h3>Til nerrbutikken</h3>
+                </div>
+            </div>
+            <div class="bestselgere_section_items">
+                <div class="bestselgere_section_item">
+                    <h4>20%</h4>
+                    <img src="images/C65A9987.png" alt="bestselgere_photo">
+                    <h2>Speltmel</h2>
+                    <h3>Siktet</h3>
+                    <p>Kr 34 <del> Kr 56</del></p>
+                </div>
+                <div class="bestselgere_section_item">
+                    <img src="images/C65A9987.png" alt="bestselgere_photo">
+                    <h2>Speltmel</h2>
+                    <h3>Siktet</h3>
+                    <p>Kr 34 <del> Kr 56</del></p>
+                </div>
+                <div class="bestselgere_section_item">
+                    <h4>20%</h4>
+                    <img src="images/C65A9987.png" alt="bestselgere_photo">
+                    <h2>Speltmel</h2>
+                    <h3>Siktet</h3>
+                    <p>Kr 34 <del> Kr 56</del></p>
+                </div>
+                <div class="bestselgere_section_item">
+                    <h4>20%</h4>
+                    <img src="images/C65A9987.png" alt="bestselgere_photo">
+                    <h2>Product tittel pa 2 linjer</h2>
+                    <h3>Siktet</h3>
+                    <p>Kr 34 <del> Kr 56</del></p>
+                </div>
+            </div>
+            <div class="underline">
+                <h3>Til nerrbutikken</h3>
+            </div>
+        </div>
+    </section>
+    <!-- bestselgere section end -->
+    <!-- gode section start -->
+    <section class="gode_section">
+        <div class="container">
+            <div class="gode_section_header">
+                <h3>Hvorfor velge Sigdal Molle?</h3>
+                <h2>gode grunner til a velge mel fra Sigdal molle</h2>
+            </div>
+            <div class="gode_section_items" id="gode_section_items">
+                <div class="gode_section_item">
+                    <img src="images/Group 879.png" alt="">
+                    <h3>Produsert i Norge</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget efficitur mauris.</p>
+                </div>
+                <div class="gode_section_item">
+                    <img src="images/Group 879.png" alt="">
+                    <h3>Produsert i Norge</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget efficitur mauris.</p>
+                </div>
+                <div class="gode_section_item">
+                    <img src="images/Group 879.png" alt="">
+                    <h3>Produsert i Norge</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget efficitur mauris.</p>
+                </div>
+            </div>
+
+            <div class="owl-carousel owl-theme" id="gode_slider">
+                <div class="item">
+                    <div class="gode_sectionn_items">
+                        <div class="gode_sectionn_item">
+                            <img src="images/Group 879.png" alt="">
+                            <h3>Produsert i Norge</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget efficitur mauris.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="gode_sectionn_items">
+                        <div class="gode_sectionn_item">
+                            <img src="images/Group 879.png" alt="">
+                            <h3>Produsert i Norge</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget efficitur mauris.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="gode_sectionn_items">
+                        <div class="gode_sectionn_item">
+                            <img src="images/Group 879.png" alt="">
+                            <h3>Produsert i Norge</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget efficitur mauris.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gode section end -->
+    <!-- bonder section start -->
+    <section class="bonder_section">
+        <div class="container">
+            <div class="bonder_section_abouts">
+                <div class="bonder_section_photo">
+                    <img src="images/C65A9939.png" alt="">
+                </div>
+                <div class="bonder_section_texts">
+                    <h3>Bonder</h3>
+                    <h2>Bli bedre kjent med Kristoffer og Live</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum nulla ac ullamcorper mollis.</p>
+                    <a href="#">Les mer</a>
+                </div>
+                <div></div>
+
+                <div></div>
+                <div class="bonder_section_textstwo">
+                    <h3>Bonder</h3>
+                    <h2>Artikkel tittel</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum nulla ac ullamcorper mollis.</p>
+                    <a href="#">Les mer</a>
+                </div>
+                <div class="bonder_section_phototwo">
+                    <img src="images/Image.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- bonder section end -->
+    <!-- food section start -->
+        <section class="food_section">
+        <div class="container">
+            <div class="food_section_head">
+                <div>
+                    <h2>God mat med godt mel</h2>
+                </div>
+                <div class="underline">
+                    <h5>Se alle oppskrifter</h5>
+                </div>
+            </div>
+            <div class="food_section_items">
+                <div class="food_section_item">
+                    <img src="images/Image.jpg" alt="bestselgere_photo">
+                    <div class="image_text">
+                        <h2>Oppskrift tittel</h2>
+                        <h3>1. MAI 2021</h3>
+                    </div>
+                </div>
+                
+                <div class="food_section_item">
+                    <img src="images/Imagetwo.png" alt="bestselgere_photo">
+                    <div class="image_text">
+                        <h2>Litt lenger oppskrift tittel</h2>
+                        <h3>14. JUNI 2021</h3>
+                    </div>
+                </div>
+                
+                <div class="food_section_item">
+                    <img src="images/Image.jpg" alt="bestselgere_photo">
+                    <div class="image_text">
+                        <h2>Oppskrift tittel</h2>
+                        <h3>1. MAI 2021</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="underline_down">
+                <h5>Se alle oppskrifter</h5>
+            </div>
+        </div>
+    </section>0
+    <!-- food section end -->
+    <!-- contact section start -->
+    <div class="contact_section_banner">
+        <img src="images/Group 2444.png" alt="">
+    </div>
+    <section class="contact_section">
+        <div class="container">
+            <div class="contact_section_contents">
+                <div class="contact_section_left_content">
+                    <h2>Kontakt info</h2>
+                    <a>TLf: (+47) 95 20 56 09</a>
+                    <a>Epost: post@spesialkorn.no</a>
+                </div>
+                <div class="contact_section_right_content">
+                    <img src="images/Group 866.png" alt="">
+                    <a>Sigdalsveien 1300, 3350 Prestfoss</a>
+                </div>
+            </div>
+            <div class="contact_section_contentss">
+                <div class="contact_section_left_content_icons">
+                    <img src="images/Layer 2.png" alt="">
+                    <img src="images/stamp1.png" alt="">
+                </div>
+                <div class="contact_section_right_content_icons">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact section end -->
+    <!-- footer section start -->
+    <footer class="footer_section">
+        <div class="container">
+            <div class="footer_section_contents">
+                <div class="footer_section_left_content">
+                    <a href="#">Personvem</a>
+                    <a href="#">Kjopsbetingelser</a>
+                </div>
+                <div class="footer_section_middle_content">
+                    <img src="images/Group 865.png" alt="">
+                    <img src="images/bring--green.png" alt="">
+                </div>
+                <div class="footer_section_right_content">
+                    <p>Laget av <a href="#">NYG</a></p>
+                </div>
+            </div>
+        </div>
+        <button id="topScrollBtn" title="Go to top">Til toppen</button>
+    </footer>
+    <!-- footer section end -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <!-- <script src="js/owl.carousel.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js" integrity="sha512-FmCXNJaXWw1fc3G8zO3WdwR2N23YTWDFDTM3uretxVIbZ7lvnjHkciW4zy6JGvnrgjkcNEk8UNtdGTLs2GExAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- menubar -->
+    <script>
+        $(function(){
+            $('#menu').slicknav();
+        });
+    </script>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+        var topScrollBtn = document.getElementById("topScrollBtn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topScrollBtn.style.display = "block";
+            } else {
+                topScrollBtn.style.display = "none";
+            }
+        };
+        topScrollBtn.addEventListener("click", function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    });
+    </script>
+<!-- ======= search ======= -->
+    <script>
+        function toggleSize() {
+    var button = document.getElementById("searchButton");
+    button.classList.toggle("large"); // Toggle the "large" class to increase or decrease size
+    }
+    </script>
+
+    <!-- slider -->
+    <script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        nav:false,
+        responsiveClass:true,
+        autoplay: true,
+        autoplayTimeOut: 1000,
+        responsive:{
+            0:{
+                items:1,
+            },
+            600:{
+                items:1,
+            },
+            1000:{
+                items:1,
+            }
+        }
+    })
+    </script>
+<!-- video -->
+    <script>
+        function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+    </script>
+
+
+<!-- =================== -->
+<!-- =================== -->
+
+<!-- =================== -->
+<script>
+    // Get the icon and popup elements
+    var icon = document.getElementById('icon');
+    var popup = document.getElementById('popup');
+    // Get the close button element
+    var closeBtn = document.querySelector('.close');
+
+    // Function to display the popup
+    function displayPopup() {
+        popup.style.display = 'block';
+    }
+
+    // Function to hide the popup
+    function hidePopup() {
+        popup.style.display = 'none';
+    }
+
+    // Event listener for icon click
+    icon.addEventListener('click', displayPopup);
+
+    // Event listener for close button click
+    closeBtn.addEventListener('click', hidePopup);
+
+    // Event listener for clicking outside the popup to close it
+    window.addEventListener('click', function(event) {
+        if (event.target == popup) {
+            hidePopup();
+        }
+    });
+</script>
+
+<!-- ================== -->
+
+
+<script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+    
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+    </script>
+
+</body>
+</html> 
