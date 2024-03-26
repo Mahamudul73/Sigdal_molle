@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SIGDAL MGLLE</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGDAL MGLLE</title>
+    <link rel="shortcut icon" href="images/Group 952.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" integrity="sha512-heyoieAHmpAL3BdaQMsbIOhVvGb4+pl4aGCZqWzX/f1BChRArrBy/XUZDHW9WVi5p6pf92pX4yjkfmdaIYa2QQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
 <body>
     <header class="header_section">
         <div class="container">
@@ -22,20 +24,119 @@
                     <a href="index.html"><img class="logo" src="images/Group 952.png" alt="logo"></a>
                 </div>
                 <div class="header_section_menubar">
-                    <ul>
-                        <li><a href="nettbutikk.html">Nettbutikk</a></li>
-                        <li><a href="oppskrifter.html">Oppskrifter</a></li>
-                        <li><a href="siste.html">Side nytt</a></li>
-                        <li><a href="urkron.html">Kornerter</a></li>
-                        <li><a href="om.html">Om oss</a></li>
-                    </ul>
+                    <div class="menuberr">                    
+                        <ul id="menu" class="mobile_menu">
+                            <div class="search_icon_mobile">
+                                <form action="">
+                                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    <input type="search" class="search_button" placeholder="Søk">
+                                </form>
+                            </div>
+                            <li><a href="nettbutikk.html">Nettbutikk</a></li>
+                            <li><a href="oppskrifter.html">Oppskrifter</a></li>
+                            <li><a href="siste.html">Side nytt</a></li>
+                            <li><a href="urkron.html">Kornerter</a></li>
+                            <li><a href="om.html">Om oss</a></li>
+                            <li class="min_side"><a href="login.html"><i class="fa-solid fa-user"></i>  Min Side</a></li>
+                            <div class="imagee">
+                                <img src="images/Group 2444.png" alt="">
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="menuber_search_section">
+                        <div class="search-icon">
+                            <form action="">
+                                <input type="search"  id="searchButton" onclick="toggleSize()" name="" id="" class="menu_search_right" placeholder="Søk">
+                            </form>
+                        </div>
+                        <!-- user login -->
+                        <button onclick="openPopup()" id="user_login"><i class="fa-solid fa-user"></i></button>
+                        <div id="popup" class="popup">
+                            <button onclick="closePopup()" id="buttonn"><i class="fa-solid fa-xmark"></i></button>
+                            <section class="login_section" id="login_section">
+                                <div class="login_section_main">
+                                    <h2>Logg inn</h2>
+                                    <div class="login_section_main_column">
+                                        <form action="">
+                                            <label for="">E-post</label>
+                                            <input type="email" placeholder="Oppgi din e-post" class="login_input">
+                                            <label for="">Password</label>
+                                            <input type="password" placeholder="Oppgi dit password" class="login_input">
+                                            <button>Logg inn</button>
+                                        </form>
+                                        <a href="login_glemt_password.html">Glemt password?</a>
+                                        <a href="registration.html">Opprett Konto</a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div id="overlay" class="overlay"></div>
+                    </div>
                 </div>
-                <div class="header_section_right_items" id="searchButtonn">
-                    <form action="">
-                        <input type="search" id="searchButton" class="menu_search" placeholder="sok">
-                        <a href="#"><i class="fa-solid fa-user"></i></a>
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </form>
+                <div class="header_section_right_items">
+                    <button onclick="openPopup_two()" id="card_login"><i class="fa-solid fa-cart-shopping"></i></button>
+                        <div id="popup_two" class="popup_two">
+                            <button onclick="closePopup_two()" id="buttonn_two"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="card_section">
+                                <h2>Handlekurv</h2>
+                                <div class="card_section_main">
+                                    <div class="card_section_photo">
+                                        <div class="image">
+                                            <img src="images/handlekurv.png" alt="">
+                                        </div>
+                                        <div class="card_right_middle_texts">
+                                            <h3>Speltmel- <span>Siktet</span></h3>
+                                            <h4>Storelse: 1 kg</h4>
+                                            <p><i class="fa-solid fa-minus"></i><span>1</span><i class="fa-solid fa-plus"></i></p>
+                                        </div>
+                                        <div class="card_right_text">
+                                            <div><i class="fa-regular fa-trash-can"></i></div>
+                                            <div id="kr"><strong>Kr 55</strong></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card_section_photo">
+                                        <div class="image">
+                                            <img src="images/handlekurv.png" alt="">
+                                        </div>
+                                        <div class="card_right_middle_texts">
+                                            <h3>Speltmel- <span>Siktet</span></h3>
+                                            <h4>Storelse: 1 kg</h4>
+                                            <p><i class="fa-solid fa-minus"></i><span>1</span><i class="fa-solid fa-plus"></i></p>
+                                        </div>
+                                        <div class="card_right_text" id="right_text">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                            <div id="krr">
+                                                <del>Kr 55</del>
+                                                <h1>Kr 34</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="card_section_main_column_content">
+                                    <div class="card_section_right_column_down_texts">
+                                        <div class="card_section_right_column_down_texts_left">
+                                            <p>Rabatt</p>
+                                            <h3>Levering</h3>
+                                            <h4>Totalsum <span>(MVA inkludert)</span></h4>
+                                        </div>
+                                        <div class="card_section_right_column_down_texts_right">
+                                            <p>kr 21</p>
+                                            <h3>kr 39</h3>
+                                            <h4>Kr 128</h4>
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <form action="">
+                                            <button>Fortsett å handle</button>
+                                        </form>
+                                        <a href="handlekurv.html">Til kassen</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div id="overlay_two" class="overlay_two"></div>
                 </div>
             </div>
         </div>
@@ -206,11 +307,18 @@
         </div>
         <button id="topScrollBtn" title="Go to top">Til toppen</button>
     </footer>
-    <!-- footer section start -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- slider -->
+    <!-- footer section end -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- ----------------- -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js" integrity="sha512-FmCXNJaXWw1fc3G8zO3WdwR2N23YTWDFDTM3uretxVIbZ7lvnjHkciW4zy6JGvnrgjkcNEk8UNtdGTLs2GExAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- menubar -->
+    <script>
+        $(function(){
+            $('#menu').slicknav();
+        });
+    </script>
 
     <!-- slider  -->
     <script>
@@ -264,6 +372,39 @@ this.classList.add("clicked");
 });
 </script>
 <!-- =========================================== -->
+
+<!-- ======= search ======= -->
+<script>
+    function toggleSize() {
+var button = document.getElementById("searchButton");
+button.classList.toggle("large"); // Toggle the "large" class to increase or decrease size
+}
+</script>
+
+<!-- =========  popup  ========= -->
+<script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+    
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+<!-- =========  popup two ========= -->
+<script>
+    function openPopup_two() {
+        document.getElementById("popup_two").style.display = "block";
+        document.getElementById("overlay_two").style.display = "block";
+    }
+    
+    function closePopup_two() {
+        document.getElementById("popup_two").style.display = "none";
+        document.getElementById("overlay_two").style.display = "none";
+    }
+</script>
 
 </body>
 </html> 
